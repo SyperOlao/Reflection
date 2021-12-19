@@ -1,26 +1,26 @@
 ﻿namespace ClassLibrary2
 {
-    public class Closet: Furniture
+    public class Closet: IFurniture
     {
         public int NumOfShelves { get; set; }
 
         public int NumOfDoors { get; set; }
 
-        public string material { get; set; }
+        public string Material { get; set; }
 
         public Closet(string material, int numOfShelves, int numOfDoors)
         {
-            this.material = material;
+            this.Material = material;
             this.NumOfShelves = numOfShelves;
             this.NumOfDoors = numOfDoors;
         }
 
-        public string anyFurnitureMethod1()
+        public string AnyFurnitureMethod1()
         {
             return "anyFurnitureMethod1";
         }
 
-        public string anyFurnitureMethod2()
+        public string AnyFurnitureMethod2()
         {
             return "anyFurnitureMethod2";
         }

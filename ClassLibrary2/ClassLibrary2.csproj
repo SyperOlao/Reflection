@@ -42,7 +42,7 @@
         <Compile Include="Closet.cs" />
         <Compile Include="ClothShelf.cs" />
         <Compile Include="FoodShelf.cs" />
-        <Compile Include="Furniture.cs" />
+        <Compile Include="IFurniture.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
