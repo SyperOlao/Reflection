@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{70FA408D-B9CF-45C0-B218-0E9631D93EB6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{F311F76C-A725-4A2D-99EB-A01D6A4B81F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary2", "ClassLibrary2\ClassLibrary2.csproj", "{41609496-C42E-4FCA-A17D-D0172A757657}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{70FA408D-B9CF-45C0-B218-0E9631D93EB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70FA408D-B9CF-45C0-B218-0E9631D93EB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70FA408D-B9CF-45C0-B218-0E9631D93EB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F311F76C-A725-4A2D-99EB-A01D6A4B81F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F311F76C-A725-4A2D-99EB-A01D6A4B81F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F311F76C-A725-4A2D-99EB-A01D6A4B81F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F311F76C-A725-4A2D-99EB-A01D6A4B81F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41609496-C42E-4FCA-A17D-D0172A757657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41609496-C42E-4FCA-A17D-D0172A757657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41609496-C42E-4FCA-A17D-D0172A757657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41609496-C42E-4FCA-A17D-D0172A757657}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
