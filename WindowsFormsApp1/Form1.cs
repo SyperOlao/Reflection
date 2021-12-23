@@ -28,19 +28,50 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var instances = from t in Assembly.GetExecutingAssembly().GetTypes()
-                where t.GetInterfaces().Contains(typeof(IFurniture))
-                      && t.GetConstructor(Type.EmptyTypes) != null
-                select Activator.CreateInstance(t) as IFurniture;
-            
-            foreach (var instance in instances)
+            var asm = Assembly.Load("ClassLibrary2");
+            var types = asm.GetTypes();
+            var result = types.Where(x => x.GetInterface("IFurniture") != null);
+            label1.Text = "1";
+            foreach (var r in result)
             {
-                label1.Text += instance.AnyFurnitureMethod1();
+                comboBox1.Items.Add(r);
             }
+
+            label1.Text += comboBox1.SelectedText;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             
-            
-            Closet cl = new Closet("h", 1, 2);
-            Console.WriteLine(cl.NumOfShelves);
+        
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var item = comboBox1.SelectedItem;
+            label1.Text = item.ToString();
+            var type = typeof(IFurniture);
+            foreach (var method in type.GetMethods())
+            {
+                comboBox2.Items.Add(method.Name);
+            }
+        }
+        
+        public static void ShowMethods(Type type)
+        {
+            foreach (var method in type.GetMethods())
+            {
+                var parameters = method.GetParameters();
+                var parameterDescriptions = string.Join
+                (", ", method.GetParameters()
+                    .Select(x => x.ParameterType + " " + x.Name)
+                    .ToArray());
+
+                Console.WriteLine("{0} {1} ({2})",
+                    method.ReturnType,
+                    method.Name,
+                    parameterDescriptions);
+            }
         }
     }
 }
