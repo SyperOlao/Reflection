@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using ClassLibrary2;
-
+using System.Reflection;
     /*
      * Взять за основу задачу 5. Должно быть не менее 3 классов,
      * которые наследуются от абстрактного класса. Используя рефлексию
@@ -31,12 +31,15 @@ namespace WindowsFormsApp1
             var types = asm.GetTypes();
             var result = types.Where(x => x.GetInterface("IFurniture") != null);
             label1.Text = "Выберете класс из списка: ";
+            label2.Text = "Выполненый метод: ";
+            label3.Text = String.Empty;
             foreach (var r in result)
             {
                 comboBox1.Items.Add(r);
             }
 
             label1.Text += comboBox1.SelectedText;
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,6 +59,19 @@ namespace WindowsFormsApp1
                 comboBox2.Items.Add(method.Name);
             }
         }
-        
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var asm = Assembly.Load("ClassLibrary2");
+            var type = asm.GetType(comboBox1.SelectedItem.ToString());
+            var result = type.GetMethod(comboBox2.SelectedItem.ToString());
+            ConstructorInfo ctor = type.GetConstructor(new[] { typeof(int), typeof(string), typeof(int), typeof(int)});
+            object classInstance = Activator.CreateInstance(type, new object[] { 10, "gh", 67, 56 });
+            if (!(result is null))
+            {
+                var result1 = ctor.Invoke(classInstance, null);
+                if (!(result1 is null)) label3.Text = result1.ToString();
+            }
+        }
     }
 }
